@@ -648,18 +648,31 @@
     .g-item:nth-child(6) { grid-column: span 2; aspect-ratio: 21/8; }
   }
 
-  @media (max-width: 640px) {
-    header { padding: 1rem 4vw; }
-    .phone { display: none; }
-    section { padding: 5rem 4vw; }
-    .hero-year { display: none; }
-    .why-grid { gap: 2rem; }
-
-    /* Mobile gallery: 2 колонки, всі 6 фото рівними парами */
-    .gallery-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4px;
-    }
+ @media (max-width: 640px) {
+  header { padding: 1rem 4vw; }
+  .phone { display: none; }
+  section { padding: 5rem 4vw; }
+  .hero-year { display: none; }
+  
+  /* ─── NEW STYLES FOR MOBILE READABILITY ─── */
+  
+  /* Создаем темный оверлей для текста, чтобы отделить его от фона */
+  .hero-content {
+    background: rgba(13, 13, 13, 0.85); /* Темный полупрозрачный фон */
+    padding: 2.2rem; /* Отступы для текста */
+    border-radius: 8px; /* Небольшое закругление */
+    border: 1px solid rgba(196, 154, 82, 0.15); /* Тонкая золотая рамка */
+    text-align: center; /* Центрирование текста для аккуратности */
+    
+    /* Убедимся, что оверлей занимает всю ширину section-padding */
+    width: 100%; 
+  }
+  
+  /* Центрируем кнопку внутри действий */
+  .hero-actions { justify-content: center; }
+  
+  /* ... остальные существующие стили ... */
+}
     .g-item:nth-child(1) { grid-column: span 2; aspect-ratio: 16/10; }
     .g-item:nth-child(2) { grid-column: span 1; aspect-ratio: 1/1; }
     .g-item:nth-child(3) { grid-column: span 1; aspect-ratio: 1/1; }
